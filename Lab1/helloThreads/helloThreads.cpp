@@ -1,6 +1,6 @@
-/* Name: Theodora Tataru
-   Student No: C00231174
-   License: GNU Affero General Public License v3.0 
+/*! Name: Theodora Tataru
+    Student No: C00231174
+    License: GNU Affero General Public License v3.0 */ 
 
 /*! \file helloThreads.cpp
     \brief A Documented file.

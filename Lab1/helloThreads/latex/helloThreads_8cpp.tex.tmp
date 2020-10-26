@@ -1,0 +1,57 @@
+\hypertarget{helloThreads_8cpp}{}\section{hello\+Threads.\+cpp File Reference}
+\label{helloThreads_8cpp}\index{hello\+Threads.\+cpp@{hello\+Threads.\+cpp}}
+
+
+A Documented file.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for hello\+Threads.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{helloThreads_8cpp_ae0dbf7b3f4f43153450248b3ed6e6b51}{call\+\_\+from\+\_\+thread} (int tid)
+\begin{DoxyCompactList}\small\item\em This function will be called from a thread. \end{DoxyCompactList}\item 
+int \hyperlink{helloThreads_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\begin{DoxyCompactList}\small\item\em The eponymous main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Documented file. 
+
+Name\+: Theodora Tataru Student No\+: C00231174 License\+: G\+NU Affero General Public License v3.\+0
+
+You should document all your files using doxygen. N\+O\+TE\+: Any files not documented in this manner will not be accepted! 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{helloThreads_8cpp_ae0dbf7b3f4f43153450248b3ed6e6b51}\label{helloThreads_8cpp_ae0dbf7b3f4f43153450248b3ed6e6b51}} 
+\index{hello\+Threads.\+cpp@{hello\+Threads.\+cpp}!call\+\_\+from\+\_\+thread@{call\+\_\+from\+\_\+thread}}
+\index{call\+\_\+from\+\_\+thread@{call\+\_\+from\+\_\+thread}!hello\+Threads.\+cpp@{hello\+Threads.\+cpp}}
+\subsubsection{\texorpdfstring{call\+\_\+from\+\_\+thread()}{call\_from\_thread()}}
+{\footnotesize\ttfamily void call\+\_\+from\+\_\+thread (\begin{DoxyParamCaption}\item[{int}]{tid }\end{DoxyParamCaption})}
+
+
+
+This function will be called from a thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tid} & the thread number\\
+\hline
+\end{DoxyParams}
+tid is assigned a number when the thread is created. Any function created by a thread must have this function signature The function prints out its thread id. \mbox{\Hypertarget{helloThreads_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{helloThreads_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{hello\+Threads.\+cpp@{hello\+Threads.\+cpp}!main@{main}}
+\index{main@{main}!hello\+Threads.\+cpp@{hello\+Threads.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The eponymous main function. 
+
+Forks off 10 threads using a vector of num\+\_\+threads std\+::thread objects. Then joins each thread with the main thread and exits $<$ Launch a group of threads
+
+$<$ Join the threads with the main thread 
