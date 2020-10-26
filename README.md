@@ -5,9 +5,9 @@
 <b>Lecturer: </b> Joseph Kehoe <br> <br>
 
 <u><b>Dependencies:</u></b>
-	- GIT
-	- EMACS
-	- G++
-	- gdb
-	- Make
-	- Doxygen 
+- GIT
+- EMACS
+- G++
+- gdb
+- Make
+- Doxygen 
