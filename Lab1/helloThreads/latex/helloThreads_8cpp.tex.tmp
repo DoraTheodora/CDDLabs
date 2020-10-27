@@ -10,7 +10,7 @@ A Documented file.
 {\ttfamily \#include $<$vector$>$}\newline
 Include dependency graph for hello\+Threads.\+cpp\+:
 % FIG 0
-\subsection*{Functions}
+\subsection*{Lab1}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{helloThreads_8cpp_ae0dbf7b3f4f43153450248b3ed6e6b51}{call\+\_\+from\+\_\+thread} (int tid)
@@ -21,8 +21,6 @@ int \hyperlink{helloThreads_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
 
 \subsection{Detailed Description}
 A Documented file. 
-
-Name\+: Theodora Tataru Student No\+: C00231174 License\+: G\+NU Affero General Public License v3.\+0
 
 You should document all your files using doxygen. N\+O\+TE\+: Any files not documented in this manner will not be accepted! 
 

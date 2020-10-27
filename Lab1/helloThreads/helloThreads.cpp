@@ -1,9 +1,13 @@
-/*! Name: Theodora Tataru
-    Student No: C00231174
-    License: GNU Affero General Public License v3.0 */ 
+/*! \mainpage Lab1
+    \author Theodora Tataru, Student No: C00231174
+    \date 26 October 2020
+    \copyright  License: GNU Affero General Public License v3.0
+    \name Lab1 
+*/ 
 
 /*! \file helloThreads.cpp
     \brief A Documented file.
+    
     
     You should document all your files using doxygen.  
     NOTE: Any files not documented in this manner will not be accepted!

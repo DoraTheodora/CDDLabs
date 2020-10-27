@@ -1,3 +1,9 @@
+/*! \mainpage Lab 2 - Semaphores 
+    \author Theodora Tataru, Student No: C00231174
+    \date 27 October 2020
+    \copyright  License: GNU Affero General Public License v3.0
+    \name Lab 2 - Semaphores 
+*/ 
 #include "Semaphore.h"
 /*! \class Semaphore
     \brief A Semaphore Implementation
