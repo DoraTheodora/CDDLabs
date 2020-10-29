@@ -1,0 +1,81 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\subsection*{Functions}
+\begin{Indent}\textbf{ Lab 2 -\/ Semaphores}\par
+{\em Semaphores, another important contribution by E. W. Dijkstra, can be viewed as an extension to mutex locks. ~\newline
+ A semaphore is an object with two methods Wait and \hyperlink{class_signal}{Signal}, a private integer counter and a private queue (of threads). ~\newline
+ The semantics of a semaphore is very simple. Suppose S is a semaphore whose private counter has been initialized to a non-\/negative integer.
+
+\hyperlink{}{\href{https://pages.mtu.edu/~shene/NSF-3/e-Book/SEMA/basics.html}{\tt https\+://pages.\+mtu.\+edu/$\sim$shene/\+N\+S\+F-\/3/e-\/\+Book/\+S\+E\+M\+A/basics.\+html} }}\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_a2b4729d561c345111ccab970fe11e229}{task\+One} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ the\+Semaphore, int delay)
+\begin{DoxyCompactList}\small\item\em This is a thread that sleeps for a certain amount of seconds, and then prints to the screen \char`\"{}\+I must print first\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_ae4ea9570be601d182fa473c7ca431852}{task\+Two} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ the\+Semaphore)
+\begin{DoxyCompactList}\small\item\em This thread prints to the screen \char`\"{}\+This will appear second\char`\"{}. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a568b3afc214ba30be5bf526d6b27b611}{main} (void)
+\begin{DoxyCompactList}\small\item\em This is the main method of the code and starts the threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a568b3afc214ba30be5bf526d6b27b611}\label{main_8cpp_a568b3afc214ba30be5bf526d6b27b611}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This is the main method of the code and starts the threads. 
+
+\begin{DoxyReturn}{Returns}
+The main method returns 0, for the normal exit of a program 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a2b4729d561c345111ccab970fe11e229}\label{main_8cpp_a2b4729d561c345111ccab970fe11e229}} 
+\index{main.\+cpp@{main.\+cpp}!task\+One@{task\+One}}
+\index{task\+One@{task\+One}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{task\+One()}{taskOne()}}
+{\footnotesize\ttfamily void task\+One (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{the\+Semaphore,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+
+This is a thread that sleeps for a certain amount of seconds, and then prints to the screen \char`\"{}\+I must print first\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Semaphore} & controls the control flow of the function \\
+\hline
+{\em delay} & indicates the time the thread will sleep \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ae4ea9570be601d182fa473c7ca431852}\label{main_8cpp_ae4ea9570be601d182fa473c7ca431852}} 
+\index{main.\+cpp@{main.\+cpp}!task\+Two@{task\+Two}}
+\index{task\+Two@{task\+Two}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{task\+Two()}{taskTwo()}}
+{\footnotesize\ttfamily void task\+Two (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{the\+Semaphore }\end{DoxyParamCaption})}
+
+
+
+This thread prints to the screen \char`\"{}\+This will appear second\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Semaphore} & controls the control flow of the function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file main.\+cpp.
+

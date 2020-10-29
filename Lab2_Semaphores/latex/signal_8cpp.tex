@@ -1,0 +1,50 @@
+\hypertarget{signal_8cpp}{}\section{signal.\+cpp File Reference}
+\label{signal_8cpp}\index{signal.\+cpp@{signal.\+cpp}}
+{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{signal_8cpp_a2b4729d561c345111ccab970fe11e229}{task\+One} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ the\+Semaphore, int delay)
+\item 
+void \hyperlink{signal_8cpp_ae4ea9570be601d182fa473c7ca431852}{task\+Two} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ the\+Semaphore)
+\item 
+int \hyperlink{signal_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{signal_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{signal_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{signal.\+cpp@{signal.\+cpp}!main@{main}}
+\index{main@{main}!signal.\+cpp@{signal.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+$<$ Launch the threads
+
+$<$ Wait for the threads to finish 
+
+Definition at line 28 of file signal.\+cpp.
+
+\mbox{\Hypertarget{signal_8cpp_a2b4729d561c345111ccab970fe11e229}\label{signal_8cpp_a2b4729d561c345111ccab970fe11e229}} 
+\index{signal.\+cpp@{signal.\+cpp}!task\+One@{task\+One}}
+\index{task\+One@{task\+One}!signal.\+cpp@{signal.\+cpp}}
+\subsubsection{\texorpdfstring{task\+One()}{taskOne()}}
+{\footnotesize\ttfamily void task\+One (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{the\+Semaphore,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+displays a message first 
+
+Definition at line 12 of file signal.\+cpp.
+
+\mbox{\Hypertarget{signal_8cpp_ae4ea9570be601d182fa473c7ca431852}\label{signal_8cpp_ae4ea9570be601d182fa473c7ca431852}} 
+\index{signal.\+cpp@{signal.\+cpp}!task\+Two@{task\+Two}}
+\index{task\+Two@{task\+Two}!signal.\+cpp@{signal.\+cpp}}
+\subsubsection{\texorpdfstring{task\+Two()}{taskTwo()}}
+{\footnotesize\ttfamily void task\+Two (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{the\+Semaphore }\end{DoxyParamCaption})}
+
+displays a message second 
+
+Definition at line 20 of file signal.\+cpp.
+
