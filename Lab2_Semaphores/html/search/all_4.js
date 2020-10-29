@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['wait',['Wait',['../class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda',1,'Semaphore::Wait()'],['../class_semaphore.html#a7f700173ae86ae623684109066e07656',1,'Semaphore::Wait(const std::chrono::duration&lt; R, P &gt; &amp;crRelTime)']]]
+  ['this_20lab_20is_20about_20semaphores',['This lab is about semaphores',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['taskone',['taskOne',['../main_8cpp.html#a2b4729d561c345111ccab970fe11e229',1,'taskOne(std::shared_ptr&lt; Semaphore &gt; theSemaphore, int delay):&#160;main.cpp'],['../signal_8cpp.html#a2b4729d561c345111ccab970fe11e229',1,'taskOne(std::shared_ptr&lt; Semaphore &gt; theSemaphore, int delay):&#160;signal.cpp']]],
+  ['tasktwo',['taskTwo',['../main_8cpp.html#ae4ea9570be601d182fa473c7ca431852',1,'taskTwo(std::shared_ptr&lt; Semaphore &gt; theSemaphore):&#160;main.cpp'],['../signal_8cpp.html#ae4ea9570be601d182fa473c7ca431852',1,'taskTwo(std::shared_ptr&lt; Semaphore &gt; theSemaphore):&#160;signal.cpp']]]
 ];

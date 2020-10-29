@@ -1,10 +1,10 @@
-/*! \mainpage Lab 2 - Semaphores 
-    \author Theodora Tataru, Student No: C00231174\n  
-    \date 27 October 2020 
-    \copyright  License: GNU Affero General Public License v3.0 
-    \name Lab 2 - Semaphores 
-    \link Reference: https://pages.mtu.edu/~shene/NSF-3/e-Book/SEMA/basics.html
-    \brief Semaphores, another important contribution by E. W. Dijkstra, can be viewed as an extension to mutex locks. \n A semaphore is an object with two methods Wait and Signal, a private integer counter and a private queue (of threads). \n The semantics of a semaphore is very simple. Suppose S is a semaphore whose private counter has been initialized to a non-negative integer. 
+/*!   \mainpage Lab 2 - Semaphores 
+      \author Theodora Tataru, Student No: C00231174\n  
+      \date 27 October 2020 
+      \copyright  License: GNU Affero General Public License v3.0 
+      \name Lab 2 - Semaphores 
+      \subsection Semaphores, another important contribution by E. W. Dijkstra, can be viewed as an extension to mutex locks. \n A semaphore is an object with two methods Wait and Signal, a private integer counter and a private queue (of threads). \n The semantics of a semaphore is very simple. Suppose S is a semaphore whose private counter has been initialized to a non-negative integer. 
+      \subsection Reference: https://pages.mtu.edu/~shene/NSF-3/e-Book/SEMA/basics.html
 */
 
 #include "Semaphore.h"

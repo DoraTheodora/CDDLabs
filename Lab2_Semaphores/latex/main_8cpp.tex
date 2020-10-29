@@ -6,11 +6,7 @@
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
 \subsection*{Functions}
 \begin{Indent}\textbf{ Lab 2 -\/ Semaphores}\par
-{\em Semaphores, another important contribution by E. W. Dijkstra, can be viewed as an extension to mutex locks. ~\newline
- A semaphore is an object with two methods Wait and \hyperlink{class_signal}{Signal}, a private integer counter and a private queue (of threads). ~\newline
- The semantics of a semaphore is very simple. Suppose S is a semaphore whose private counter has been initialized to a non-\/negative integer.
-
-\hyperlink{}{\href{https://pages.mtu.edu/~shene/NSF-3/e-Book/SEMA/basics.html}{\tt https\+://pages.\+mtu.\+edu/$\sim$shene/\+N\+S\+F-\/3/e-\/\+Book/\+S\+E\+M\+A/basics.\+html} }}\begin{DoxyCompactItemize}
+{\em }\begin{DoxyCompactItemize}
 \item 
 void \hyperlink{main_8cpp_a2b4729d561c345111ccab970fe11e229}{task\+One} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ the\+Semaphore, int delay)
 \begin{DoxyCompactList}\small\item\em This is a thread that sleeps for a certain amount of seconds, and then prints to the screen \char`\"{}\+I must print first\char`\"{}. \end{DoxyCompactList}\item 
