@@ -1,0 +1,110 @@
+\hypertarget{class_semaphore}{}\section{Semaphore Class Reference}
+\label{class_semaphore}\index{Semaphore@{Semaphore}}
+
+
+A \hyperlink{class_semaphore}{Semaphore} Implementation Uses C++11 features such as mutex and condition variables to implement \hyperlink{class_semaphore}{Semaphore}.  
+
+
+
+
+{\ttfamily \#include $<$Semaphore.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_semaphore_a0d9290d316636875ca85d1d78950a817}{Semaphore} (unsigned int ui\+Count=0)
+\item 
+void \hyperlink{class_semaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda}{Wait} ()
+\begin{DoxyCompactList}\small\item\em When Wait is executed by a thread, we have two possibilities\+: The counter of S is positive In this case, the counter is decreased by 1 and the thread resumes its execution. The counter of S is zero In this case, the thread is suspended and put into the private queue of S. ~\newline
+\hyperlink{}{https\+://pages.\+mtu.\+edu/$\sim$shene/\+N\+S\+F-\/3/e-\/\+Book/\+S\+E\+M\+A/basics.\+html.}\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename R , typename P $>$ }\\bool \hyperlink{class_semaphore_a7f700173ae86ae623684109066e07656}{Wait} (const std\+::chrono\+::duration$<$ R, P $>$ \&cr\+Rel\+Time)
+\item 
+void \hyperlink{class_semaphore_a86f92f738b4486439b296d8e235895f2}{Signal} ()
+\begin{DoxyCompactList}\small\item\em When \hyperlink{class_signal}{Signal} is executed by a thread, we also have two possibilities\+: The queue of S has no waiting thread The counter of S is increased by one and the thread resumes its execution. The queue of S has waiting threads In this case, the counter of S must be zero (see the discussion of Wait above). One of the waiting threads will be allowed to leave the queue and resume its execution. The thread that executes \hyperlink{class_signal}{Signal} also continues. ~\newline
+\hyperlink{}{https\+://pages.\+mtu.\+edu/$\sim$shene/\+N\+S\+F-\/3/e-\/\+Book/\+S\+E\+M\+A/basics.\+html.}\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \hyperlink{class_semaphore}{Semaphore} Implementation Uses C++11 features such as mutex and condition variables to implement \hyperlink{class_semaphore}{Semaphore}. 
+
+A \hyperlink{class_semaphore}{Semaphore} Implementation.
+
+\begin{DoxyAuthor}{Author}
+Theodora Tataru 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+30 October 2020 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+License\+: G\+NU Affero General Public License v3.\+0
+\end{DoxyCopyright}
+\begin{DoxyNote}{Note}
+The value of the semaphores cannot be requested, as is irrelevant because values are unpredictable!!! Uses C++11 features such as mutex and condition variables to implement \hyperlink{class_semaphore}{Semaphore}
+\end{DoxyNote}
+Uses C++11 features such as mutex and condition variables to implement \hyperlink{class_semaphore}{Semaphore} 
+
+Definition at line 14 of file Semaphore.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_semaphore_a0d9290d316636875ca85d1d78950a817}\label{class_semaphore_a0d9290d316636875ca85d1d78950a817}} 
+\index{Semaphore@{Semaphore}!Semaphore@{Semaphore}}
+\index{Semaphore@{Semaphore}!Semaphore@{Semaphore}}
+\subsubsection{\texorpdfstring{Semaphore()}{Semaphore()}}
+{\footnotesize\ttfamily Semaphore\+::\+Semaphore (\begin{DoxyParamCaption}\item[{unsigned int}]{ui\+Count = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 22 of file Semaphore.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_semaphore_a86f92f738b4486439b296d8e235895f2}\label{class_semaphore_a86f92f738b4486439b296d8e235895f2}} 
+\index{Semaphore@{Semaphore}!Signal@{Signal}}
+\index{Signal@{Signal}!Semaphore@{Semaphore}}
+\subsubsection{\texorpdfstring{Signal()}{Signal()}}
+{\footnotesize\ttfamily void Semaphore\+::\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+When \hyperlink{class_signal}{Signal} is executed by a thread, we also have two possibilities\+: The queue of S has no waiting thread The counter of S is increased by one and the thread resumes its execution. The queue of S has waiting threads In this case, the counter of S must be zero (see the discussion of Wait above). One of the waiting threads will be allowed to leave the queue and resume its execution. The thread that executes \hyperlink{class_signal}{Signal} also continues. ~\newline
+\hyperlink{}{https\+://pages.\+mtu.\+edu/$\sim$shene/\+N\+S\+F-\/3/e-\/\+Book/\+S\+E\+M\+A/basics.\+html.}
+
+
+
+Definition at line 56 of file Semaphore.\+cpp.
+
+\mbox{\Hypertarget{class_semaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda}\label{class_semaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda}} 
+\index{Semaphore@{Semaphore}!Wait@{Wait}}
+\index{Wait@{Wait}!Semaphore@{Semaphore}}
+\subsubsection{\texorpdfstring{Wait()}{Wait()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Semaphore\+::\+Wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+When Wait is executed by a thread, we have two possibilities\+: The counter of S is positive In this case, the counter is decreased by 1 and the thread resumes its execution. The counter of S is zero In this case, the thread is suspended and put into the private queue of S. ~\newline
+\hyperlink{}{https\+://pages.\+mtu.\+edu/$\sim$shene/\+N\+S\+F-\/3/e-\/\+Book/\+S\+E\+M\+A/basics.\+html.}
+
+
+
+Definition at line 28 of file Semaphore.\+cpp.
+
+\mbox{\Hypertarget{class_semaphore_a7f700173ae86ae623684109066e07656}\label{class_semaphore_a7f700173ae86ae623684109066e07656}} 
+\index{Semaphore@{Semaphore}!Wait@{Wait}}
+\index{Wait@{Wait}!Semaphore@{Semaphore}}
+\subsubsection{\texorpdfstring{Wait()}{Wait()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename R , typename P $>$ \\
+bool Semaphore\+::\+Wait (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::duration$<$ R, P $>$ \&}]{cr\+Rel\+Time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file Semaphore.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_semaphore_8h}{Semaphore.\+h}\item 
+\hyperlink{_semaphore_8cpp}{Semaphore.\+cpp}\end{DoxyCompactItemize}

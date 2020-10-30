@@ -1,0 +1,81 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_a9141e3eb0b1274e58b053fd8a60a94e3}{task\+One} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ first\+Sem, std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ second\+Sem, int delay)
+\begin{DoxyCompactList}\small\item\em This is a thread that sleeps for a certain amount of seconds, and then prints to the screen \char`\"{}\+I must print first\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_ac7cb6b39082835c7e3c853c42af9ecdc}{task\+Two} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ first\+Sem, std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ second\+Sem, int delay)
+\begin{DoxyCompactList}\small\item\em This runs divided into 2, the first statement will print and then will give control to the next function. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a568b3afc214ba30be5bf526d6b27b611}{main} (void)
+\begin{DoxyCompactList}\small\item\em This is the main method of the code and starts the threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a568b3afc214ba30be5bf526d6b27b611}\label{main_8cpp_a568b3afc214ba30be5bf526d6b27b611}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This is the main method of the code and starts the threads. 
+
+\begin{DoxyReturn}{Returns}
+The main method returns 0, for the normal exit of a program 
+\end{DoxyReturn}
+$<$ Launch the threads 
+
+Definition at line 57 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a9141e3eb0b1274e58b053fd8a60a94e3}\label{main_8cpp_a9141e3eb0b1274e58b053fd8a60a94e3}} 
+\index{main.\+cpp@{main.\+cpp}!task\+One@{task\+One}}
+\index{task\+One@{task\+One}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{task\+One()}{taskOne()}}
+{\footnotesize\ttfamily void task\+One (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{first\+Sem,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{second\+Sem,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+
+This is a thread that sleeps for a certain amount of seconds, and then prints to the screen \char`\"{}\+I must print first\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Sem} & gives the function the control of the first part of the function \\
+\hline
+{\em second\+Sem} & gives the function the control when for the second part of the function \\
+\hline
+{\em delay} & indicates the time the thread will sleep displays a message that is split in to 2 sections to show how a rendezvous works \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ac7cb6b39082835c7e3c853c42af9ecdc}\label{main_8cpp_ac7cb6b39082835c7e3c853c42af9ecdc}} 
+\index{main.\+cpp@{main.\+cpp}!task\+Two@{task\+Two}}
+\index{task\+Two@{task\+Two}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{task\+Two()}{taskTwo()}}
+{\footnotesize\ttfamily void task\+Two (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{first\+Sem,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{second\+Sem,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+
+This runs divided into 2, the first statement will print and then will give control to the next function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Sem} & puts the thread in the queue waiting for its turn \\
+\hline
+{\em second\+Sem} & puts the second part of the thread in the waiting queue, waiting for its turn \\
+\hline
+{\em delay} & indicates the time the thread will sleep displays a message that is split in to 2 sections to show how a rendezvous works \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 43 of file main.\+cpp.
+
