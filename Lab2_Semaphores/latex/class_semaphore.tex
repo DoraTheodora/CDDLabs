@@ -13,9 +13,6 @@ A \hyperlink{class_semaphore}{Semaphore} Implementation.
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_semaphore_a0d9290d316636875ca85d1d78950a817}{Semaphore} (unsigned int ui\+Count=0)
-\end{DoxyCompactItemize}
-\begin{Indent}\textbf{ Lab 2 -\/ Semaphores}\par
-{\em }\begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_semaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda}{Wait} ()
 \begin{DoxyCompactList}\small\item\em When Wait is executed by a thread, we have two possibilities\+: The counter of S is positive In this case, the counter is decreased by 1 and the thread resumes its execution. The counter of S is zero In this case, the thread is suspended and put into the private queue of S. ~\newline
@@ -25,12 +22,21 @@ void \hyperlink{class_semaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda}{Wait} ()
 void \hyperlink{class_semaphore_a86f92f738b4486439b296d8e235895f2}{Signal} ()
 \begin{DoxyCompactList}\small\item\em When \hyperlink{class_signal}{Signal} is executed by a thread, we also have two possibilities\+: The queue of S has no waiting thread The counter of S is increased by one and the thread resumes its execution. The queue of S has waiting threads In this case, the counter of S must be zero (see the discussion of Wait above). One of the waiting threads will be allowed to leave the queue and resume its execution. The thread that executes \hyperlink{class_signal}{Signal} also continues. ~\newline
 \hyperlink{}{https\+://pages.\+mtu.\+edu/$\sim$shene/\+N\+S\+F-\/3/e-\/\+Book/\+S\+E\+M\+A/basics.\+html.}\end{DoxyCompactList}\end{DoxyCompactItemize}
-\end{Indent}
 
 
 \subsection{Detailed Description}
 A \hyperlink{class_semaphore}{Semaphore} Implementation. 
 
+\begin{DoxyAuthor}{Author}
+Theodora Tataru, Student No\+: C00231174~\newline
+ 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27 October 2020 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+License\+: G\+NU Affero General Public License v3.\+0
+\end{DoxyCopyright}
 \begin{DoxyNote}{Note}
 The value of the semaphores cannot be requested, as is irrelevant because values are unpredictable!!! Uses C++11 features such as mutex and condition variables to implement \hyperlink{class_semaphore}{Semaphore}
 \end{DoxyNote}
@@ -67,7 +73,7 @@ When \hyperlink{class_signal}{Signal} is executed by a thread, we also have two 
 
 
 
-Definition at line 54 of file Semaphore.\+cpp.
+Definition at line 52 of file Semaphore.\+cpp.
 
 \mbox{\Hypertarget{class_semaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda}\label{class_semaphore_a72aabebf026e3a8b1f3e4d0fa8ee1eda}} 
 \index{Semaphore@{Semaphore}!Wait@{Wait}}
@@ -82,7 +88,7 @@ When Wait is executed by a thread, we have two possibilities\+: The counter of S
 
 
 
-Definition at line 26 of file Semaphore.\+cpp.
+Definition at line 24 of file Semaphore.\+cpp.
 
 \mbox{\Hypertarget{class_semaphore_a7f700173ae86ae623684109066e07656}\label{class_semaphore_a7f700173ae86ae623684109066e07656}} 
 \index{Semaphore@{Semaphore}!Wait@{Wait}}
@@ -93,7 +99,7 @@ bool Semaphore\+::\+Wait (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::
 
 
 
-Definition at line 34 of file Semaphore.\+cpp.
+Definition at line 32 of file Semaphore.\+cpp.
 
 
 
