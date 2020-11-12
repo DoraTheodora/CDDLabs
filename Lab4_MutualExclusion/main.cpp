@@ -18,10 +18,8 @@ int sharedVariable=0;
     \brief An Implementation of Mutual Exclusion using Semaphores
     \param mutex used to achieve mutual exclusion. 
     \param numUpdates is the variable incremented to prove the use of mutual exclusion. This parameter can be incremented by one thread at the time
-    
-
-   Uses C++11 features such as mutex a
-   In the main, the semaphore is initalized to the value of 1, so that
+  
+  Uses C++11. In the main, the semaphore is initalized to the value of 1, so that
   first thread, to able to continue its execution when the WAIT method is called. The next thread will nead to wait for the
   thread inside the loop to signal so it can proceed.
 

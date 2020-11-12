@@ -6,6 +6,7 @@ var NAVTREE =
         [ "a mutex, using semaphores", "index.html#Implementing", null ]
       ] ]
     ] ],
+    [ "This lab is about mutual exclusion", "md__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
