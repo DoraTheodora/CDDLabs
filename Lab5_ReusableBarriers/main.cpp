@@ -1,8 +1,15 @@
+/*!   \mainpage Lab - Mutual Exclusion (mutex)
+      \author Theodora Tataru, Student No: C00231174\n  
+      \date 03 November 2020 
+      \copyright  License: GNU Affero General Public License v3.0 
+      \section Abstract
+      \subsection Implementing a barrier - 2 semaphores working in pairs - 
+*/
+
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
 #include <vector>
-
 
 static const int num_threads = 5;
 int sharedVariable=0;

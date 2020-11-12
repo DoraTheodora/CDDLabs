@@ -1,0 +1,66 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_ad567e0b80db383854a288b1111d074ad}{update\+Task} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ mutex\+Sem, std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ sem\+Two, std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ sem\+Three, int num\+Loops)
+\item 
+int \hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a2d5b01367ae1267dfac47c7875aac5e4}{shared\+Variable} =0
+\item 
+int \hyperlink{main_8cpp_a83ebe07794059ddd77a12b4174804985}{thread\+Turn} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+$<$ Launch the threads 
+
+Definition at line 65 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ad567e0b80db383854a288b1111d074ad}\label{main_8cpp_ad567e0b80db383854a288b1111d074ad}} 
+\index{main.\+cpp@{main.\+cpp}!update\+Task@{update\+Task}}
+\index{update\+Task@{update\+Task}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{update\+Task()}{updateTask()}}
+{\footnotesize\ttfamily void update\+Task (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{mutex\+Sem,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{sem\+Two,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{sem\+Three,  }\item[{int}]{num\+Loops }\end{DoxyParamCaption})}
+
+displays a message that is split in to 2 sections to show how a rendezvous works 
+
+Definition at line 23 of file main.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a2d5b01367ae1267dfac47c7875aac5e4}\label{main_8cpp_a2d5b01367ae1267dfac47c7875aac5e4}} 
+\index{main.\+cpp@{main.\+cpp}!shared\+Variable@{shared\+Variable}}
+\index{shared\+Variable@{shared\+Variable}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{shared\+Variable}{sharedVariable}}
+{\footnotesize\ttfamily int shared\+Variable =0}
+
+
+
+Definition at line 15 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a83ebe07794059ddd77a12b4174804985}\label{main_8cpp_a83ebe07794059ddd77a12b4174804985}} 
+\index{main.\+cpp@{main.\+cpp}!thread\+Turn@{thread\+Turn}}
+\index{thread\+Turn@{thread\+Turn}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{thread\+Turn}{threadTurn}}
+{\footnotesize\ttfamily int thread\+Turn = 0}
+
+
+
+Definition at line 16 of file main.\+cpp.
+
