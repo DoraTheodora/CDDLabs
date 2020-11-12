@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sempahores and Mutual Exclusion: main.cpp File Reference</title>
+<title>Rendezvoud: main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,9 +20,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="pngegg (1).png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="pngegg (2).png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sempahores and Mutual Exclusion
+   <div id="projectname">Rendezvoud
    </div>
   </td>
  </tr>
@@ -74,14 +74,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9141e3eb0b1274e58b053fd8a60a94e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9141e3eb0b1274e58b053fd8a60a94e3">taskOne</a> (std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt; firstSem, std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt; secondSem, int delay)</td></tr>
-<tr class="memdesc:a9141e3eb0b1274e58b053fd8a60a94e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a thread that sleeps for a certain amount of seconds, and then prints to the screen "I must print first".  <a href="#a9141e3eb0b1274e58b053fd8a60a94e3">More...</a><br /></td></tr>
-<tr class="separator:a9141e3eb0b1274e58b053fd8a60a94e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7cb6b39082835c7e3c853c42af9ecdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac7cb6b39082835c7e3c853c42af9ecdc">taskTwo</a> (std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt; firstSem, std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt; secondSem, int delay)</td></tr>
-<tr class="memdesc:ac7cb6b39082835c7e3c853c42af9ecdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This runs divided into 2, the first statement will print and then will give control to the next function.  <a href="#ac7cb6b39082835c7e3c853c42af9ecdc">More...</a><br /></td></tr>
-<tr class="separator:ac7cb6b39082835c7e3c853c42af9ecdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3306f95747c46fbfa58b65e1f60f1374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3306f95747c46fbfa58b65e1f60f1374">taskOne</a> (std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt; taskOneArrived, std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt; taskTwoArrived, int delay)</td></tr>
+<tr class="memdesc:a3306f95747c46fbfa58b65e1f60f1374"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method has a 'randezvous' point with the method called 'taskTwo'. First part of the method will execute, followed by the first part of taskTwo. Then, taskTwo will signal and resume the rest of the method, again when finishing giving the control back to TaskTwo to resume it's execution.  <a href="#a3306f95747c46fbfa58b65e1f60f1374">More...</a><br /></td></tr>
+<tr class="separator:a3306f95747c46fbfa58b65e1f60f1374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad94d83f702e87c1c3544d5eba6ade833"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad94d83f702e87c1c3544d5eba6ade833">taskTwo</a> (std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt; taskOneArrived, std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt; taskTwoArrived, int delay)</td></tr>
+<tr class="memdesc:ad94d83f702e87c1c3544d5eba6ade833"><td class="mdescLeft">&#160;</td><td class="mdescRight">This runs divided into 2, the first statement will print and then will give control to the next function.  <a href="#ad94d83f702e87c1c3544d5eba6ade833">More...</a><br /></td></tr>
+<tr class="separator:ad94d83f702e87c1c3544d5eba6ade833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a568b3afc214ba30be5bf526d6b27b611"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a568b3afc214ba30be5bf526d6b27b611">main</a> (void)</td></tr>
-<tr class="memdesc:a568b3afc214ba30be5bf526d6b27b611"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main method of the code and starts the threads.  <a href="#a568b3afc214ba30be5bf526d6b27b611">More...</a><br /></td></tr>
+<tr class="memdesc:a568b3afc214ba30be5bf526d6b27b611"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the main method of the code that creates 2 threads.  <a href="#a568b3afc214ba30be5bf526d6b27b611">More...</a><br /></td></tr>
 <tr class="separator:a568b3afc214ba30be5bf526d6b27b611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -101,16 +101,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This is the main method of the code and starts the threads. </p>
+<p>This is the main method of the code that creates 2 threads. </p>
 <dl class="section return"><dt>Returns</dt><dd>The main method returns 0, for the normal exit of a program </dd></dl>
 <p>&lt; Launch the threads </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00057">57</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00059">59</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a9141e3eb0b1274e58b053fd8a60a94e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9141e3eb0b1274e58b053fd8a60a94e3">&#9670;&nbsp;</a></span>taskOne()</h2>
+<a id="a3306f95747c46fbfa58b65e1f60f1374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3306f95747c46fbfa58b65e1f60f1374">&#9670;&nbsp;</a></span>taskOne()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -119,13 +119,13 @@ Functions</h2></td></tr>
           <td class="memname">void taskOne </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt;&#160;</td>
-          <td class="paramname"><em>firstSem</em>, </td>
+          <td class="paramname"><em>taskOneArrived</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_semaphore.html">Semaphore</a> &gt;&#160;</td>
-          <td class="paramname"><em>secondSem</em>, </td>
+          <td class="paramname"><em>taskTwoArrived</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -141,22 +141,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This is a thread that sleeps for a certain amount of seconds, and then prints to the screen "I must print first". </p>
+<p>This method has a 'randezvous' point with the method called 'taskTwo'. First part of the method will execute, followed by the first part of taskTwo. Then, taskTwo will signal and resume the rest of the method, again when finishing giving the control back to TaskTwo to resume it's execution. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">firstSem</td><td>gives the function the control of the first part of the function </td></tr>
-    <tr><td class="paramname">secondSem</td><td>gives the function the control when for the second part of the function </td></tr>
-    <tr><td class="paramname">delay</td><td>indicates the time the thread will sleep displays a message that is split in to 2 sections to show how a rendezvous works </td></tr>
+    <tr><td class="paramname">taskOneArrived</td><td>signals that first part of the function had been executed </td></tr>
+    <tr><td class="paramname">taskTwoArrived</td><td>puts the thread into the queue, waiting for it's turn </td></tr>
+    <tr><td class="paramname">delay</td><td>indicates the time the function will sleep, before starting the execution displays a message that is split in to 2 sections to show how a rendezvous works </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00027">27</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00029">29</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ac7cb6b39082835c7e3c853c42af9ecdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7cb6b39082835c7e3c853c42af9ecdc">&#9670;&nbsp;</a></span>taskTwo()</h2>
+<a id="ad94d83f702e87c1c3544d5eba6ade833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad94d83f702e87c1c3544d5eba6ade833">&#9670;&nbsp;</a></span>taskTwo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,14 +190,14 @@ Functions</h2></td></tr>
 <p>This runs divided into 2, the first statement will print and then will give control to the next function. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">firstSem</td><td>puts the thread in the queue waiting for its turn </td></tr>
-    <tr><td class="paramname">secondSem</td><td>puts the second part of the thread in the waiting queue, waiting for its turn </td></tr>
-    <tr><td class="paramname">delay</td><td>indicates the time the thread will sleep displays a message that is split in to 2 sections to show how a rendezvous works </td></tr>
+    <tr><td class="paramname">taskOneArrived</td><td>puts the thread in the queue waiting for its turn </td></tr>
+    <tr><td class="paramname">taskTwoArrived</td><td>signals that the thread had finished it's execution until this particular line </td></tr>
+    <tr><td class="paramname">delay</td><td>indicates the time the function will sleep, before starting the execution displays a message that is split in to 2 sections to show how a rendezvous works </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00043">43</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00045">45</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
