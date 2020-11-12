@@ -1,0 +1,76 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_aef4875da50435521d4d0c12994b1fbbb}{update\+Task} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$ mutex, int num\+Updates)
+\begin{DoxyCompactList}\small\item\em An Implementation of Mutual Exclusion using Semaphores. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a568b3afc214ba30be5bf526d6b27b611}{main} (void)
+\begin{DoxyCompactList}\small\item\em This is the main method that creates a semaphore initialized with the value of 1, so that first thread to be able to pass over the first W\+A\+IT of the semaphore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a2d5b01367ae1267dfac47c7875aac5e4}{shared\+Variable} =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a568b3afc214ba30be5bf526d6b27b611}\label{main_8cpp_a568b3afc214ba30be5bf526d6b27b611}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This is the main method that creates a semaphore initialized with the value of 1, so that first thread to be able to pass over the first W\+A\+IT of the semaphore. 
+
+\begin{DoxyReturn}{Returns}
+The main method returns 0, for the normal exit of a program 
+\end{DoxyReturn}
+$<$ Launch the threads
+
+$<$ Join the threads with the main thread 
+
+Definition at line 49 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_aef4875da50435521d4d0c12994b1fbbb}\label{main_8cpp_aef4875da50435521d4d0c12994b1fbbb}} 
+\index{main.\+cpp@{main.\+cpp}!update\+Task@{update\+Task}}
+\index{update\+Task@{update\+Task}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{update\+Task()}{updateTask()}}
+{\footnotesize\ttfamily update\+Task (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_semaphore}{Semaphore} $>$}]{first\+Sem,  }\item[{int}]{num\+Updates }\end{DoxyParamCaption})}
+
+
+
+An Implementation of Mutual Exclusion using Semaphores. 
+
+displays a message that is split in to 2 sections to show how a rendezvous works
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & used to achieve mutual exclusion. \\
+\hline
+{\em num\+Updates} & is the variable incremented to prove the use of mutual exclusion. This parameter can be incremented by one thread at the time\\
+\hline
+\end{DoxyParams}
+Uses C++11 features such as mutex a In the main, the semaphore is initalized to the value of 1, so that first thread, to able to continue its execution when the W\+A\+IT method is called. The next thread will nead to wait for the thread inside the loop to signal so it can proceed. 
+
+Definition at line 30 of file main.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a2d5b01367ae1267dfac47c7875aac5e4}\label{main_8cpp_a2d5b01367ae1267dfac47c7875aac5e4}} 
+\index{main.\+cpp@{main.\+cpp}!shared\+Variable@{shared\+Variable}}
+\index{shared\+Variable@{shared\+Variable}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{shared\+Variable}{sharedVariable}}
+{\footnotesize\ttfamily int shared\+Variable =0}
+
+
+
+Definition at line 15 of file main.\+cpp.
+
