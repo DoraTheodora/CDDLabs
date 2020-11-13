@@ -28,13 +28,14 @@ int sharedVariable=0;
 void updateTask(std::shared_ptr<Semaphore> mutex, int numUpdates)
 {
   // This is a mutex, only one thread can go into the loop at a time
-  mutex->Wait();
   for(int i=0;i<numUpdates;i++)
   {
+    mutex->Wait();
     //UPDATE SHARED VARIABLE HERE!
     sharedVariable++;
+      mutex->Signal();
   }
-  mutex->Signal();
+
   // realeasing the lock so other threads cab access the loop
 
 }
@@ -55,7 +56,7 @@ int main(void){
   }
   std::cout << "Launched from the main\n";
   /**< Join the threads with the main thread */
-  for (auto& v :vt){
+  for (auto& v :vt){ //auto -> the compiler will figure out the type. It is advised to use auto, even the developer knows the type
       v.join();
   }
   std::cout << sharedVariable << std::endl;

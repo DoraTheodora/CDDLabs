@@ -44,10 +44,17 @@
 
 /* Code: */
 #pragma once
-class Barrier{
+#include "Semaphore.h"
+
+class Barrier
+{
   int numThreads;
+  Semaphore sem1(0);
+  Semaphore sem2(1);
+  Semaphore mutex(1);
+
  public:
-  Barrier(int numThreads);
+  Barrier(int totalThreads):numThreads(totalThreads){}; //numThreads = totalThreads
   virtual ~Barrier();
   void wait();  
 };
