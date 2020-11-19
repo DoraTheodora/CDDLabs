@@ -43,20 +43,27 @@
  */
 
 /* Code: */
-#pragma once
 #include "Semaphore.h"
+#pragma once //only include the #include once
 
 class Barrier
 {
-  int numThreads;
-  Semaphore sem1(0);
-  Semaphore sem2(1);
-  Semaphore mutex(1);
+  int threadCount;
+  int threadTotal;
+  Semaphore theLock{1};
+  Semaphore turnstileOne{0};
+  Semaphore turnstileTwo{1};
 
  public:
-  Barrier(int totalThreads):numThreads(totalThreads){}; //numThreads = totalThreads
-  virtual ~Barrier();
+  Barrier(int totalThreads)
+    {
+      threadCount = 0;
+      threadTotal = totalThreads;
+    }; //numThreads = totalThreads
+  virtual ~Barrier(); //destructors need to be virtual
   void wait();  
+  void phaseOne();
+  void phaseTwo();
 };
 
 

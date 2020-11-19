@@ -46,7 +46,54 @@
 // Code:
 #include "Semaphore.h"
 #include "Barrier.h"
+#include <iostream>
 
+//Barrier::Barrier(int numThreads):
+//    threadCount(0),threadTotal(numThreads)
+//{
 
+//}
+
+Barrier::~Barrier()
+{
+
+}
+
+void Barrier::phaseOne()
+{
+    theLock.Wait();
+    threadCount++;
+    if(threadCount == threadTotal)
+    {
+        std::cout << std::endl;
+        turnstileTwo.Wait();
+        turnstileOne.Signal();
+    }
+    theLock.Signal();
+    turnstileOne.Wait();
+    turnstileOne.Signal();
+    
+}
+
+void Barrier::phaseTwo()
+{
+    theLock.Wait();
+    threadCount--;
+    if(threadCount == 0)
+    {
+        std::cout << std::endl;
+        turnstileOne.Wait();
+        turnstileTwo.Signal();
+    }
+    theLock.Signal();
+    turnstileTwo.Wait();
+    turnstileTwo.Signal();
+}
+ 
+ void Barrier::wait()
+ {
+     phaseOne();
+     phaseTwo();
+ }
 // 
 // Barrier.cpp ends here
