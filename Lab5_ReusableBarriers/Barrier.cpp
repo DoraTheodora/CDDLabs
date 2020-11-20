@@ -50,7 +50,7 @@ void Barrier::phaseOne()
 
 /*!
     \fn void Barrier::phaseTwo()
-    \brief This function will handle the phase two of rendezvou between N threads
+    \brief This function will handle the phase one of rendezvou between N threads
     With the help of the mutex, and the pair of sempahores, the threads are controlled on how they execute within the function
 */
 void Barrier::phaseTwo()
