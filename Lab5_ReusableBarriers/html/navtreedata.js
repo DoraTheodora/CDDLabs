@@ -3,7 +3,7 @@ var NAVTREE =
   [ "Barrier", "index.html", [
     [ "Lab - Mutual Exclusion (mutex)", "index.html", [
       [ "Abstract", "index.html#Abstract", [
-        [ "a barrier - 2 semaphores working in pairs -", "index.html#Implementing", null ]
+        [ "a barrier class, using semaphores", "index.html#Implementing", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -18,8 +18,7 @@ var NAVTREE =
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ]
+        [ "Functions", "globals_func.html", null ]
       ] ]
     ] ]
   ] ]

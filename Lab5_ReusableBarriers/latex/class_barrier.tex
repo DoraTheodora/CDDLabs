@@ -2,50 +2,144 @@
 \label{class_barrier}\index{Barrier@{Barrier}}
 
 
+This class implements a barrier, using 3 semaphores.  
+
+
+
+
 {\ttfamily \#include $<$Barrier.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_barrier_a7290fb8952d0f7779b8d6a7a34bbd407}{Barrier} (int num\+Threads)
-\item 
-virtual \hyperlink{class_barrier_aa913b6dd26448ae765d581a276749860}{$\sim$\+Barrier} ()
-\item 
-void \hyperlink{class_barrier_a83a9d2e85e98b3d2081538bf0da29b60}{wait} ()
-\end{DoxyCompactItemize}
+\hyperlink{class_barrier_a4d825874d4435fb6d7c741fa4d2b540d}{Barrier} (int total\+Threads)
+\begin{DoxyCompactList}\small\item\em This is the constructor of the \hyperlink{class_barrier}{Barrier} class. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_barrier_a401f40e73302009b305904ffc7825304}{$\sim$\+Barrier} ()
+\begin{DoxyCompactList}\small\item\em The destrucor is invoked automatically when the object goes out of scope or is explicitly destroyed by a call to delete. \end{DoxyCompactList}\item 
+void \hyperlink{class_barrier_a35c899565ad8db3425aed11daf4f09bd}{phase\+One} ()
+\begin{DoxyCompactList}\small\item\em This function will handle the phase one of rendezvou between N threads With the help of the mutex, and the pair of sempahores, the threads are controlled on how they execute within the function. \end{DoxyCompactList}\item 
+void \hyperlink{class_barrier_a63271a70390e6680b07d7e701ff6b2e3}{phase\+Two} ()
+\begin{DoxyCompactList}\small\item\em This function will handle the phase two of rendezvou between N threads With the help of the mutex, and the pair of sempahores, the threads are controlled on how they execute within the function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+This class implements a barrier, using 3 semaphores. 
+
+This file is the abstract definition of the \hyperlink{class_barrier}{Barrier} class.
 
 
-Definition at line 47 of file Barrier.\+h.
+\begin{DoxyParams}{Parameters}
+{\em mutex\{1\};} & This semphore is initiated to value 1 as it will act as mutex \\
+\hline
+{\em turnstile\+One\{0\};} & This semphore is initiated to value 0 and is the pair of turnstile\+Two. It will alayws have the opposite value of turnstile\+Two \\
+\hline
+{\em turnstile\+Two\{1\};} & This semphore is initiated to value 1 and is the pair of turnstile\+One. It will alayws have the opposite value of turnstile\+One \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file Barrier.\+h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_barrier_a7290fb8952d0f7779b8d6a7a34bbd407}\label{class_barrier_a7290fb8952d0f7779b8d6a7a34bbd407}} 
+\mbox{\Hypertarget{class_barrier_a4d825874d4435fb6d7c741fa4d2b540d}\label{class_barrier_a4d825874d4435fb6d7c741fa4d2b540d}} 
 \index{Barrier@{Barrier}!Barrier@{Barrier}}
 \index{Barrier@{Barrier}!Barrier@{Barrier}}
 \subsubsection{\texorpdfstring{Barrier()}{Barrier()}}
-{\footnotesize\ttfamily Barrier\+::\+Barrier (\begin{DoxyParamCaption}\item[{int}]{num\+Threads }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Barrier\+::\+Barrier (\begin{DoxyParamCaption}\item[{int}]{total\+Threads }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_barrier_aa913b6dd26448ae765d581a276749860}\label{class_barrier_aa913b6dd26448ae765d581a276749860}} 
+
+
+This is the constructor of the \hyperlink{class_barrier}{Barrier} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Threads} & represents the number of threads the barrier will handle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file Barrier.\+h.
+
+\mbox{\Hypertarget{class_barrier_a401f40e73302009b305904ffc7825304}\label{class_barrier_a401f40e73302009b305904ffc7825304}} 
 \index{Barrier@{Barrier}!````~Barrier@{$\sim$\+Barrier}}
 \index{````~Barrier@{$\sim$\+Barrier}!Barrier@{Barrier}}
 \subsubsection{\texorpdfstring{$\sim$\+Barrier()}{~Barrier()}}
-{\footnotesize\ttfamily virtual Barrier\+::$\sim$\+Barrier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Barrier\+::$\sim$\+Barrier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The destrucor is invoked automatically when the object goes out of scope or is explicitly destroyed by a call to delete. 
+
+Destructors are always V\+I\+R\+T\+U\+AL 
+
+Definition at line 25 of file Barrier.\+cpp.
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_barrier_a83a9d2e85e98b3d2081538bf0da29b60}\label{class_barrier_a83a9d2e85e98b3d2081538bf0da29b60}} 
-\index{Barrier@{Barrier}!wait@{wait}}
-\index{wait@{wait}!Barrier@{Barrier}}
-\subsubsection{\texorpdfstring{wait()}{wait()}}
-{\footnotesize\ttfamily void Barrier\+::wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_barrier_a35c899565ad8db3425aed11daf4f09bd}\label{class_barrier_a35c899565ad8db3425aed11daf4f09bd}} 
+\index{Barrier@{Barrier}!phase\+One@{phase\+One}}
+\index{phase\+One@{phase\+One}!Barrier@{Barrier}}
+\subsubsection{\texorpdfstring{phase\+One()}{phaseOne()}}
+{\footnotesize\ttfamily void Barrier\+::phase\+One (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+This function will handle the phase one of rendezvou between N threads With the help of the mutex, and the pair of sempahores, the threads are controlled on how they execute within the function. 
+
+\begin{DoxyRemark}{Remarks}
+mutex.\+Wait() allows only one thread at the time to enter
+
+if(thread\+Count==thread\+Total) this conditional statement is executed only by the last thread
+
+turnstile\+Two.\+Wait() closes second door
+
+turnstile\+One.\+Signal() opens first door
+
+mutex.\+Signal() Signals the next thread that can proceed
+
+turnstile\+One.\+Wait() closes first door
+
+turnstile\+One.\+Signal() opens first door 
+\end{DoxyRemark}
+
+
+Definition at line 34 of file Barrier.\+cpp.
+
+\mbox{\Hypertarget{class_barrier_a63271a70390e6680b07d7e701ff6b2e3}\label{class_barrier_a63271a70390e6680b07d7e701ff6b2e3}} 
+\index{Barrier@{Barrier}!phase\+Two@{phase\+Two}}
+\index{phase\+Two@{phase\+Two}!Barrier@{Barrier}}
+\subsubsection{\texorpdfstring{phase\+Two()}{phaseTwo()}}
+{\footnotesize\ttfamily void Barrier\+::phase\+Two (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function will handle the phase two of rendezvou between N threads With the help of the mutex, and the pair of sempahores, the threads are controlled on how they execute within the function. 
+
+\begin{DoxyRemark}{Remarks}
+mutex.\+Wait() allows only one thread at the time to enter
+
+if(thread\+Count==0) this conditional statement is executed only by the last thread
+
+turnstile\+One.\+Wait() closes first door
+
+turnstile\+Two.\+Signal() opens second door
+
+mutex.\+Signal() Signals the next thread that can proceed
+
+turnstile\+Two.\+Wait() closes second door
+
+turnstile\+Two.\+Signal() opens second door 
+\end{DoxyRemark}
+
+
+Definition at line 56 of file Barrier.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{_barrier_8h}{Barrier.\+h}\end{DoxyCompactItemize}
+\hyperlink{_barrier_8h}{Barrier.\+h}\item 
+\hyperlink{_barrier_8cpp}{Barrier.\+cpp}\end{DoxyCompactItemize}

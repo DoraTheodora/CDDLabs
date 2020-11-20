@@ -1,48 +1,18 @@
-/* Barrier.h --- Barrier.h
- * 
- * Filename: Barrier.h
- * Description: 
- * Author: Joseph
- * Maintainer: 
- * Created: Tue Jan  8 12:12:03 2019 (+0000)
- * Version: 
- * Package-Requires: ()
- * Last-Updated: Tue Jan  8 12:15:54 2019 (+0000)
- *           By: Joseph
- *     Update #: 2
- * URL: 
- * Doc URL: 
- * Keywords: 
- * Compatibility: 
- * 
+/**
+ *\file 
  */
+/*!   \mainpage Lab - Mutual Exclusion (mutex)
+      \author Theodora Tataru, Student No: C00231174\n  
+      \date 20 November 2020 
+      \copyright  License: GNU Affero General Public License v3.0 
+      \section Abstract
+      \subsection Implementing a barrier class, using semaphores
+*/
 
-/* Commentary: 
- * 
- * 
- * 
- */
-
-/* Change Log:
- * 
- * 
- */
-
-/* This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/* Code: */
+/*!
+    \class Barrier 
+    \brief This file is the abstract definition of the Barrier class
+*/
 #include "Semaphore.h"
 #pragma once //only include the #include once
 
@@ -50,18 +20,23 @@ class Barrier
 {
   int threadCount;
   int threadTotal;
-  Semaphore theLock{1};
-  Semaphore turnstileOne{0};
-  Semaphore turnstileTwo{1};
+
+  Semaphore mutex{1}; /*!< This semphore is initiated to value 1 as it will act as mutex */
+  Semaphore turnstileOne{0}; /*!< This semphore is initiated to value 0 and is the pair of turnstileTwo. It will alayws have the opposite value of turnstileTwo */
+  Semaphore turnstileTwo{1}; /*!< This semphore is initiated to value 1 and is the pair of turnstileOne. It will alayws have the opposite value of turnstileOne */
 
  public:
+ /*!
+    \fn Barrier(int totalThreads)
+    \param totalThreads represents the number of threads the barrier will handle 
+    \brief This is the constructor of the Barrier class
+*/
   Barrier(int totalThreads)
     {
       threadCount = 0;
       threadTotal = totalThreads;
     }; //numThreads = totalThreads
-  virtual ~Barrier(); //destructors need to be virtual
-  void wait();  
+  virtual ~Barrier(); /*!< Destructors are always VIRTUAL */
   void phaseOne();
   void phaseTwo();
 };

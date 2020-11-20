@@ -27,7 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="pngegg (2).png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="pngegg (1).png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Barrier
    </div>
@@ -88,41 +88,42 @@ $(document).ready(function(){initNavTree('class_barrier.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>This class implements a barrier, using 3 semaphores.  
+ <a href="class_barrier.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_barrier_8h_source.html">Barrier.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7290fb8952d0f7779b8d6a7a34bbd407"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_barrier.html#a7290fb8952d0f7779b8d6a7a34bbd407">Barrier</a> (int numThreads)</td></tr>
-<tr class="separator:a7290fb8952d0f7779b8d6a7a34bbd407"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa913b6dd26448ae765d581a276749860"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_barrier.html#aa913b6dd26448ae765d581a276749860">~Barrier</a> ()</td></tr>
-<tr class="separator:aa913b6dd26448ae765d581a276749860"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83a9d2e85e98b3d2081538bf0da29b60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_barrier.html#a83a9d2e85e98b3d2081538bf0da29b60">wait</a> ()</td></tr>
-<tr class="separator:a83a9d2e85e98b3d2081538bf0da29b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d825874d4435fb6d7c741fa4d2b540d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_barrier.html#a4d825874d4435fb6d7c741fa4d2b540d">Barrier</a> (int totalThreads)</td></tr>
+<tr class="memdesc:a4d825874d4435fb6d7c741fa4d2b540d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the constructor of the <a class="el" href="class_barrier.html" title="This class implements a barrier, using 3 semaphores. ">Barrier</a> class.  <a href="#a4d825874d4435fb6d7c741fa4d2b540d">More...</a><br /></td></tr>
+<tr class="separator:a4d825874d4435fb6d7c741fa4d2b540d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401f40e73302009b305904ffc7825304"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_barrier.html#a401f40e73302009b305904ffc7825304">~Barrier</a> ()</td></tr>
+<tr class="memdesc:a401f40e73302009b305904ffc7825304"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destrucor is invoked automatically when the object goes out of scope or is explicitly destroyed by a call to delete.  <a href="#a401f40e73302009b305904ffc7825304">More...</a><br /></td></tr>
+<tr class="separator:a401f40e73302009b305904ffc7825304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35c899565ad8db3425aed11daf4f09bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_barrier.html#a35c899565ad8db3425aed11daf4f09bd">phaseOne</a> ()</td></tr>
+<tr class="memdesc:a35c899565ad8db3425aed11daf4f09bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will handle the phase one of rendezvou between N threads With the help of the mutex, and the pair of sempahores, the threads are controlled on how they execute within the function.  <a href="#a35c899565ad8db3425aed11daf4f09bd">More...</a><br /></td></tr>
+<tr class="separator:a35c899565ad8db3425aed11daf4f09bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63271a70390e6680b07d7e701ff6b2e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_barrier.html#a63271a70390e6680b07d7e701ff6b2e3">phaseTwo</a> ()</td></tr>
+<tr class="memdesc:a63271a70390e6680b07d7e701ff6b2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will handle the phase two of rendezvou between N threads With the help of the mutex, and the pair of sempahores, the threads are controlled on how they execute within the function.  <a href="#a63271a70390e6680b07d7e701ff6b2e3">More...</a><br /></td></tr>
+<tr class="separator:a63271a70390e6680b07d7e701ff6b2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_barrier_8h_source.html#l00047">47</a> of file <a class="el" href="_barrier_8h_source.html">Barrier.h</a>.</p>
+<div class="textblock"><p>This class implements a barrier, using 3 semaphores. </p>
+<p>This file is the abstract definition of the <a class="el" href="class_barrier.html" title="This class implements a barrier, using 3 semaphores. ">Barrier</a> class.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mutex{1};</td><td>This semphore is initiated to value 1 as it will act as mutex </td></tr>
+    <tr><td class="paramname">turnstileOne{0};</td><td>This semphore is initiated to value 0 and is the pair of turnstileTwo. It will alayws have the opposite value of turnstileTwo </td></tr>
+    <tr><td class="paramname">turnstileTwo{1};</td><td>This semphore is initiated to value 1 and is the pair of turnstileOne. It will alayws have the opposite value of turnstileOne </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_barrier_8h_source.html#l00019">19</a> of file <a class="el" href="_barrier_8h_source.html">Barrier.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7290fb8952d0f7779b8d6a7a34bbd407"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7290fb8952d0f7779b8d6a7a34bbd407">&#9670;&nbsp;</a></span>Barrier()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Barrier::Barrier </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numThreads</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa913b6dd26448ae765d581a276749860"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa913b6dd26448ae765d581a276749860">&#9670;&nbsp;</a></span>~Barrier()</h2>
+<a id="a4d825874d4435fb6d7c741fa4d2b540d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d825874d4435fb6d7c741fa4d2b540d">&#9670;&nbsp;</a></span>Barrier()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,7 +132,43 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Barrier::~Barrier </td>
+          <td class="memname">Barrier::Barrier </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>totalThreads</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This is the constructor of the <a class="el" href="class_barrier.html" title="This class implements a barrier, using 3 semaphores. ">Barrier</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">totalThreads</td><td>represents the number of threads the barrier will handle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_barrier_8h_source.html#l00034">34</a> of file <a class="el" href="_barrier_8h_source.html">Barrier.h</a>.</p>
+
+</div>
+</div>
+<a id="a401f40e73302009b305904ffc7825304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401f40e73302009b305904ffc7825304">&#9670;&nbsp;</a></span>~Barrier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Barrier::~Barrier </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -144,17 +181,22 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The destrucor is invoked automatically when the object goes out of scope or is explicitly destroyed by a call to delete. </p>
+<p>Destructors are always VIRTUAL </p>
+
+<p class="definition">Definition at line <a class="el" href="_barrier_8cpp_source.html#l00025">25</a> of file <a class="el" href="_barrier_8cpp_source.html">Barrier.cpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a83a9d2e85e98b3d2081538bf0da29b60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83a9d2e85e98b3d2081538bf0da29b60">&#9670;&nbsp;</a></span>wait()</h2>
+<a id="a35c899565ad8db3425aed11daf4f09bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c899565ad8db3425aed11daf4f09bd">&#9670;&nbsp;</a></span>phaseOne()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Barrier::wait </td>
+          <td class="memname">void Barrier::phaseOne </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -162,10 +204,62 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This function will handle the phase one of rendezvou between N threads With the help of the mutex, and the pair of sempahores, the threads are controlled on how they execute within the function. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>mutex.Wait() allows only one thread at the time to enter</dd>
+<dd>
+if(threadCount==threadTotal) this conditional statement is executed only by the last thread</dd>
+<dd>
+turnstileTwo.Wait() closes second door</dd>
+<dd>
+turnstileOne.Signal() opens first door</dd>
+<dd>
+mutex.Signal() Signals the next thread that can proceed</dd>
+<dd>
+turnstileOne.Wait() closes first door</dd>
+<dd>
+turnstileOne.Signal() opens first door </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_barrier_8cpp_source.html#l00034">34</a> of file <a class="el" href="_barrier_8cpp_source.html">Barrier.cpp</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="a63271a70390e6680b07d7e701ff6b2e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63271a70390e6680b07d7e701ff6b2e3">&#9670;&nbsp;</a></span>phaseTwo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Barrier::phaseTwo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function will handle the phase two of rendezvou between N threads With the help of the mutex, and the pair of sempahores, the threads are controlled on how they execute within the function. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>mutex.Wait() allows only one thread at the time to enter</dd>
+<dd>
+if(threadCount==0) this conditional statement is executed only by the last thread</dd>
+<dd>
+turnstileOne.Wait() closes first door</dd>
+<dd>
+turnstileTwo.Signal() opens second door</dd>
+<dd>
+mutex.Signal() Signals the next thread that can proceed</dd>
+<dd>
+turnstileTwo.Wait() closes second door</dd>
+<dd>
+turnstileTwo.Signal() opens second door </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_barrier_8cpp_source.html#l00056">56</a> of file <a class="el" href="_barrier_8cpp_source.html">Barrier.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_barrier_8h_source.html">Barrier.h</a></li>
+<li><a class="el" href="_barrier_8cpp_source.html">Barrier.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

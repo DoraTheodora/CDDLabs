@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['semaphore',['Semaphore',['../class_semaphore.html#a0d9290d316636875ca85d1d78950a817',1,'Semaphore']]],
-  ['signal',['Signal',['../class_semaphore.html#a86f92f738b4486439b296d8e235895f2',1,'Semaphore']]]
+  ['phaseone',['phaseOne',['../class_barrier.html#a35c899565ad8db3425aed11daf4f09bd',1,'Barrier']]],
+  ['phasetwo',['phaseTwo',['../class_barrier.html#a63271a70390e6680b07d7e701ff6b2e3',1,'Barrier']]]
 ];

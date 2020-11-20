@@ -1,99 +1,70 @@
-// Barrier.cpp --- 
-// 
-// Filename: Barrier.cpp
-// Description: 
-// Author: Joseph
-// Maintainer: 
-// Created: Tue Jan  8 12:14:02 2019 (+0000)
-// Version: 
-// Package-Requires: ()
-// Last-Updated: Tue Jan  8 12:15:21 2019 (+0000)
-//           By: Joseph
-//     Update #: 2
-// URL: 
-// Doc URL: 
-// Keywords: 
-// Compatibility: 
-// 
-// 
 
-// Commentary: 
-// 
-// 
-// 
-// 
+/*!   \mainpage Lab - Mutual Exclusion (mutex)
+      \author Theodora Tataru, Student No: C00231174\n  
+      \date 20 November 2020 
+      \copyright  License: GNU Affero General Public License v3.0 
+      \section Abstract
+      \subsection Implementing a barrier class, using semaphores
+*/
 
-// Change Log:
-// 
-// 
-// 
-// 
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or (at
-// your option) any later version.
-// 
-// This program is distributed in the hope that it will be useful, but
-// WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// General Public License for more details.
-// 
-// You should have received a copy of the GNU General Public License
-// along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-// 
-// 
-
-// Code:
+/*!
+    \class Barrier 
+    \brief This class implements a barrier, using 3 semaphores
+    \param mutex{1}; This semphore is initiated to value 1 as it will act as mutex 
+    \param turnstileOne{0}; This semphore is initiated to value 0 and is the pair of turnstileTwo. It will alayws have the opposite value of turnstileTwo 
+    \param turnstileTwo{1}; This semphore is initiated to value 1 and is the pair of turnstileOne. It will alayws have the opposite value of turnstileOne 
+*/
 #include "Semaphore.h"
 #include "Barrier.h"
 #include <iostream>
-
-//Barrier::Barrier(int numThreads):
-//    threadCount(0),threadTotal(numThreads)
-//{
-
-//}
+/*! 
+    \fn Barrier::~Barrier()
+    \brief The destrucor is invoked automatically when the object goes out of scope or is explicitly destroyed by a call to delete
+*/
 
 Barrier::~Barrier()
-{
+{ 
 
 }
-
+/*!
+    \fn void Barrier::phaseOne()
+    \brief This function will handle the phase one of rendezvou between N threads
+    With the help of the mutex, and the pair of sempahores, the threads are controlled on how they execute within the function
+*/
 void Barrier::phaseOne()
 {
-    theLock.Wait();
+    mutex.Wait();           /*! \remark mutex.Wait() allows only one thread at the time to enter */
     threadCount++;
-    if(threadCount == threadTotal)
+    /*! \remark if(threadCount==threadTotal) this conditional statement is executed only by the last thread */
+    if(threadCount == threadTotal) 
     {
         std::cout << std::endl;
-        turnstileTwo.Wait();
-        turnstileOne.Signal();
+        turnstileTwo.Wait();    /*! \remark  turnstileTwo.Wait() closes second door */
+        turnstileOne.Signal();  /*! \remark turnstileOne.Signal() opens first door */
     }
-    theLock.Signal();
-    turnstileOne.Wait();
-    turnstileOne.Signal();
+    mutex.Signal();         /*! \remark mutex.Signal() Signals the next thread that can proceed */
+    turnstileOne.Wait();    /*! \remark turnstileOne.Wait() closes first door */
+    turnstileOne.Signal();  /*! \remark turnstileOne.Signal() opens first door */
     
 }
 
+/*!
+    \fn void Barrier::phaseTwo()
+    \brief This function will handle the phase two of rendezvou between N threads
+    With the help of the mutex, and the pair of sempahores, the threads are controlled on how they execute within the function
+*/
 void Barrier::phaseTwo()
 {
-    theLock.Wait();
+    mutex.Wait();           /*! \remark mutex.Wait() allows only one thread at the time to enter */
     threadCount--;
-    if(threadCount == 0)
+    if(threadCount == 0)    /*! \remark if(threadCount==0) this conditional statement is executed only by the last thread */
     {
         std::cout << std::endl;
-        turnstileOne.Wait();
-        turnstileTwo.Signal();
+        turnstileOne.Wait();    /*! \remark turnstileOne.Wait() closes first door */
+        turnstileTwo.Signal();  /*! \remark turnstileTwo.Signal() opens second door */
     }
-    theLock.Signal();
-    turnstileTwo.Wait();
-    turnstileTwo.Signal();
-}
- 
- void Barrier::wait()
- {
-     phaseOne();
-     phaseTwo();
- }
-// 
+    mutex.Signal();          /*! \remark mutex.Signal() Signals the next thread that can proceed */
+    turnstileTwo.Wait();     /*! \remark turnstileTwo.Wait() closes second door */
+    turnstileTwo.Signal();   /*! \remark turnstileTwo.Signal() opens second door */
+} 
 // Barrier.cpp ends here
