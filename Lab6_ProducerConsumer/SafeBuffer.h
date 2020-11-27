@@ -1,18 +1,17 @@
-
+#include <array>
 
 class SafeBuffer
 {
     int head;
     int tail;
     int size;
-    int arr[];
+    int arr[1000];
 
-    public: SafeBuffer(int sizeOfArray)
+    public: SafeBuffer()
     {
         head = 0;
         tail = 0;
-        arr[sizeOfArray];
-        size = sizeOfArray;
+        size = 1000;
         arr[0] = 0;
     }
     ~SafeBuffer();
@@ -23,5 +22,5 @@ class SafeBuffer
     void printQueue();
     void frontQueue();
     void backQueue();
-
+    void details();
 };

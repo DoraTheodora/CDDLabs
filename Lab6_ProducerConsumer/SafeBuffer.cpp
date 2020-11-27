@@ -17,7 +17,7 @@ bool SafeBuffer::isEmpty()
 
 bool SafeBuffer::isFull()
 {
-    if(tail >= size)
+    if(tail == size-1)
     {
         return true;
     }
@@ -73,4 +73,11 @@ void SafeBuffer::backQueue()
     {
       std::cout << arr[tail-1] << std::endl;
     }
+}
+
+void SafeBuffer::details()
+{
+    std::cout << "Tail: " << tail << std::endl;
+    std::cout << "Head: " << head << std::endl;
+    std::cout << "Size: " << sizeof(arr) << std::endl;
 }
