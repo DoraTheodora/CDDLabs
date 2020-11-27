@@ -1,10 +1,11 @@
-#include <iostream>
 #include "SafeBuffer.h"
+#include <iostream>
 
+SafeBuffer::~SafeBuffer() = default;
 
 bool SafeBuffer::isEmpty()
 {
-    if(head == 0 && tail ==0)
+    if(head == 0 && tail == 0)
     {
         return true;
     }
@@ -32,18 +33,22 @@ void SafeBuffer::enqueue(int value)
     {
         arr[tail] = value;
         tail++;
-    }
+        backQueue();
+    } 
 }
 
-int SafeBuffer::dequeue()
+void SafeBuffer::dequeue()
 {
     if(!isEmpty())
     {
-        int x = arr[tail-1];
+        frontQueue();
+        for(int i = head; i < tail; i++)
+        {
+            arr[i] = arr[i+1];
+        }
         tail--;
-        return x;
+        //std::cout << "Arr base address: " <<  arr << std::endl;
     }
-    return -1;
 }
 
 void SafeBuffer::printQueue()
@@ -54,7 +59,18 @@ void SafeBuffer::printQueue()
     }
 }
 
-int SafeBuffer::frontQueue()
+void SafeBuffer::frontQueue()
 {
-    return arr[tail-1];
+    if(!isEmpty())
+    {
+      std::cout << arr[head] << std::endl;
+    }
+}
+
+void SafeBuffer::backQueue()
+{
+    if(!isEmpty())
+    {
+      std::cout << arr[tail-1] << std::endl;
+    }
 }
