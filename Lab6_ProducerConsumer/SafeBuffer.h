@@ -1,3 +1,11 @@
+/*!   \mainpage Lab - Producer-Consumer
+      \author Theodora Tataru, Student No: C00231174\n  
+      \date 01 December 2020 
+      \copyright  License: GNU Affero General Public License v3.0 
+      \section Abstract class
+      \subsection Implementing a queue datastructure
+*/
+
 #include <array>
 
 class SafeBuffer

@@ -1,0 +1,137 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+
+
+In this file the threads are created and manipulated in such a way, that consumers can read and manipulate data from producers, only and only if data is present.  
+
+
+{\ttfamily \#include \char`\"{}Safe\+Buffer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Event.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_a0bae180bebcd9298834dc1230a3283a7}{producer} (std\+::shared\+\_\+ptr$<$ \hyperlink{classSafeBuffer}{Safe\+Buffer} $>$ queue, std\+::shared\+\_\+ptr$<$ \hyperlink{classSemaphore}{Semaphore} $>$ mutex, std\+::shared\+\_\+ptr$<$ \hyperlink{classSemaphore}{Semaphore} $>$ \hyperlink{main_8cpp_a7edeff794e5993849f5c25ada040e901}{consumer})
+\begin{DoxyCompactList}\small\item\em This method allows one thread at the time to write data to the queue, and signals the consumer threads that one thread can read data from the queue. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_a7edeff794e5993849f5c25ada040e901}{consumer} (std\+::shared\+\_\+ptr$<$ \hyperlink{classSafeBuffer}{Safe\+Buffer} $>$ queue, std\+::shared\+\_\+ptr$<$ \hyperlink{classSemaphore}{Semaphore} $>$ mutex, std\+::shared\+\_\+ptr$<$ \hyperlink{classSemaphore}{Semaphore} $>$ consumer)
+\begin{DoxyCompactList}\small\item\em When a tread finishes to read datas from the queue, blocks the other thread consumers to read data, until a producer thread writes data to the queue. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_a24cc0d00d5f38314d245cdbc9f7a1623}{testing\+Queue} (\hyperlink{classSafeBuffer}{Safe\+Buffer} queue)
+\begin{DoxyCompactList}\small\item\em This method was used to exercise the queue datastructure logic. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a7106e2abc437ad981830d14176d15f09}{number} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+In this file the threads are created and manipulated in such a way, that consumers can read and manipulate data from producers, only and only if data is present. 
+
+Using C++ Sempahores, and a collectivectors of threads, a solution was implemented for the Producer-\/\+Consumer Problem. The safe buffer was designed as queue with the F\+I\+FO rule\+: First element in is the first element out. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a7edeff794e5993849f5c25ada040e901}\label{main_8cpp_a7edeff794e5993849f5c25ada040e901}} 
+\index{main.\+cpp@{main.\+cpp}!consumer@{consumer}}
+\index{consumer@{consumer}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{consumer()}{consumer()}}
+{\footnotesize\ttfamily void consumer (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classSafeBuffer}{Safe\+Buffer} $>$}]{queue,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classSemaphore}{Semaphore} $>$}]{mutex,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classSemaphore}{Semaphore} $>$}]{consumer }\end{DoxyParamCaption})}
+
+
+
+When a tread finishes to read datas from the queue, blocks the other thread consumers to read data, until a producer thread writes data to the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & is the queue action, when data is removed from the datastructure \\
+\hline
+{\em mutex} & is the semaphore that ensures that only one thread at the time can read data into the queue \\
+\hline
+{\em consumer} & is a semaphore that signals the consumer threads, that they need to wait for the producers to write data to the queue \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyRemark}{Remarks}
+std\+::vector$<$std\+::thread$>$ vp(num\+\_\+threads) created the N producer threads
+
+std\+::vector$<$std\+::thread$>$ vc(num\+\_\+threads) created the N consumer threads
+
+std\+::shared\+\_\+ptr$<$\+Safe\+Buffer$>$ queue (new \hyperlink{classSafeBuffer}{Safe\+Buffer()}); instanciates the safe buffer (queue) object
+
+std\+::shared\+\_\+ptr$<$\+Semaphore$>$ mutex (new \hyperlink{classSemaphore}{Semaphore(1)}); instanciates of a Sempahore, that acts a mutex
+
+std\+::shared\+\_\+ptr$<$\+Semaphore$>$ consumers (new \hyperlink{classSemaphore}{Semaphore(0)}); instanciates of a Sempahore that dictates the consumer threads flow 
+\end{DoxyRemark}
+
+
+Definition at line 113 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a0bae180bebcd9298834dc1230a3283a7}\label{main_8cpp_a0bae180bebcd9298834dc1230a3283a7}} 
+\index{main.\+cpp@{main.\+cpp}!producer@{producer}}
+\index{producer@{producer}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{producer()}{producer()}}
+{\footnotesize\ttfamily void producer (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classSafeBuffer}{Safe\+Buffer} $>$}]{queue,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classSemaphore}{Semaphore} $>$}]{mutex,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classSemaphore}{Semaphore} $>$}]{consumer }\end{DoxyParamCaption})}
+
+
+
+This method allows one thread at the time to write data to the queue, and signals the consumer threads that one thread can read data from the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & is the queue action, when data is added into the datastructure \\
+\hline
+{\em mutex} & is the semaphore that ensures that only one thread at the time can write data into the queue \\
+\hline
+{\em consumer} & is a semaphore that signals the consumer threads, that one thread canm proceed and dequeue from the data structure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a24cc0d00d5f38314d245cdbc9f7a1623}\label{main_8cpp_a24cc0d00d5f38314d245cdbc9f7a1623}} 
+\index{main.\+cpp@{main.\+cpp}!testing\+Queue@{testing\+Queue}}
+\index{testing\+Queue@{testing\+Queue}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{testing\+Queue()}{testingQueue()}}
+{\footnotesize\ttfamily void testing\+Queue (\begin{DoxyParamCaption}\item[{\hyperlink{classSafeBuffer}{Safe\+Buffer}}]{queue }\end{DoxyParamCaption})}
+
+
+
+This method was used to exercise the queue datastructure logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queue} & is the queue datastructure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file main.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a7106e2abc437ad981830d14176d15f09}\label{main_8cpp_a7106e2abc437ad981830d14176d15f09}} 
+\index{main.\+cpp@{main.\+cpp}!number@{number}}
+\index{number@{number}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily int number = 0}
+
+
+
+Definition at line 31 of file main.\+cpp.
+

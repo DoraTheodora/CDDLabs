@@ -1,0 +1,189 @@
+\hypertarget{classSafeBuffer}{}\section{Safe\+Buffer Class Reference}
+\label{classSafeBuffer}\index{Safe\+Buffer@{Safe\+Buffer}}
+
+
+{\ttfamily \#include $<$Safe\+Buffer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSafeBuffer_af835d8d08c4dcd3326f21ae2e9988699}{Safe\+Buffer} ()
+\item 
+\hyperlink{classSafeBuffer_a032ed6faedf42bfd0b79e757bf53c644}{$\sim$\+Safe\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em The destructor of the class. \end{DoxyCompactList}\item 
+bool \hyperlink{classSafeBuffer_a0caf19dab729df52404c0f13aaf36ddc}{is\+Empty} ()
+\begin{DoxyCompactList}\small\item\em A boolean method that return\+UE if the queue has no values in it, and F\+A\+L\+SE if there exists value in the data structure. \end{DoxyCompactList}\item 
+bool \hyperlink{classSafeBuffer_ac383f154f080685aa2aef3c66771c585}{is\+Full} ()
+\begin{DoxyCompactList}\small\item\em A boolean bethod that returns T\+R\+UE if the data structure is full and cannot accept anymore values, and returns F\+A\+L\+SE if there is room in the data structure for new values. \end{DoxyCompactList}\item 
+void \hyperlink{classSafeBuffer_ad9cf3a0c9194cfcb75be17a406dff64e}{enqueue} (int value)
+\begin{DoxyCompactList}\small\item\em This methid adds a new value in the datastructure, at the tail. \end{DoxyCompactList}\item 
+void \hyperlink{classSafeBuffer_ae37fd5c3845e3a614e65887c2be72d07}{dequeue} ()
+\begin{DoxyCompactList}\small\item\em This method removes an element from the datastructure, from the head of the queue (array index 0) \end{DoxyCompactList}\item 
+void \hyperlink{classSafeBuffer_a6dec42b442f7cca40ee43fc54e8f035c}{print\+Queue} ()
+\begin{DoxyCompactList}\small\item\em This void method prints to the console all the elements from the data structure. \end{DoxyCompactList}\item 
+void \hyperlink{classSafeBuffer_a86fe7b908e03bad1b234d4bb4d0919c3}{front\+Queue} ()
+\item 
+void \hyperlink{classSafeBuffer_af64bc15803fd26fa02cc40357c635a33}{back\+Queue} ()
+\begin{DoxyCompactList}\small\item\em This method prints the last element added into the data structure. \end{DoxyCompactList}\item 
+void \hyperlink{classSafeBuffer_affaee5f2062b85d8a95379b7e66e1549}{details} ()
+\begin{DoxyCompactList}\small\item\em This method prints details about the data structure~\newline
+ Tail\+: the position of the last element from the data structure~\newline
+ Head\+: the position of the first element from the data strucure~\newline
+ Size\+: the size of the data structure~\newline
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file Safe\+Buffer.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSafeBuffer_af835d8d08c4dcd3326f21ae2e9988699}\label{classSafeBuffer_af835d8d08c4dcd3326f21ae2e9988699}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!Safe\+Buffer@{Safe\+Buffer}}
+\index{Safe\+Buffer@{Safe\+Buffer}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{Safe\+Buffer()}{SafeBuffer()}}
+{\footnotesize\ttfamily Safe\+Buffer\+::\+Safe\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18 of file Safe\+Buffer.\+h.
+
+\mbox{\Hypertarget{classSafeBuffer_a032ed6faedf42bfd0b79e757bf53c644}\label{classSafeBuffer_a032ed6faedf42bfd0b79e757bf53c644}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!````~Safe\+Buffer@{$\sim$\+Safe\+Buffer}}
+\index{````~Safe\+Buffer@{$\sim$\+Safe\+Buffer}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{$\sim$\+Safe\+Buffer()}{~SafeBuffer()}}
+{\footnotesize\ttfamily Safe\+Buffer\+::$\sim$\+Safe\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+The destructor of the class. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSafeBuffer_af64bc15803fd26fa02cc40357c635a33}\label{classSafeBuffer_af64bc15803fd26fa02cc40357c635a33}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!back\+Queue@{back\+Queue}}
+\index{back\+Queue@{back\+Queue}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{back\+Queue()}{backQueue()}}
+{\footnotesize\ttfamily void Safe\+Buffer\+::back\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method prints the last element added into the data structure. 
+
+
+
+Definition at line 102 of file Safe\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classSafeBuffer_ae37fd5c3845e3a614e65887c2be72d07}\label{classSafeBuffer_ae37fd5c3845e3a614e65887c2be72d07}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{dequeue()}{dequeue()}}
+{\footnotesize\ttfamily void Safe\+Buffer\+::dequeue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method removes an element from the datastructure, from the head of the queue (array index 0) 
+
+
+
+Definition at line 66 of file Safe\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classSafeBuffer_affaee5f2062b85d8a95379b7e66e1549}\label{classSafeBuffer_affaee5f2062b85d8a95379b7e66e1549}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!details@{details}}
+\index{details@{details}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{details()}{details()}}
+{\footnotesize\ttfamily void Safe\+Buffer\+::details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method prints details about the data structure~\newline
+ Tail\+: the position of the last element from the data structure~\newline
+ Head\+: the position of the first element from the data strucure~\newline
+ Size\+: the size of the data structure~\newline
+. 
+
+
+
+Definition at line 116 of file Safe\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classSafeBuffer_ad9cf3a0c9194cfcb75be17a406dff64e}\label{classSafeBuffer_ad9cf3a0c9194cfcb75be17a406dff64e}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily void Safe\+Buffer\+::enqueue (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+This methid adds a new value in the datastructure, at the tail. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & is the value that will be added in the data structure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file Safe\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classSafeBuffer_a86fe7b908e03bad1b234d4bb4d0919c3}\label{classSafeBuffer_a86fe7b908e03bad1b234d4bb4d0919c3}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!front\+Queue@{front\+Queue}}
+\index{front\+Queue@{front\+Queue}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{front\+Queue()}{frontQueue()}}
+{\footnotesize\ttfamily void Safe\+Buffer\+::front\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 91 of file Safe\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classSafeBuffer_a0caf19dab729df52404c0f13aaf36ddc}\label{classSafeBuffer_a0caf19dab729df52404c0f13aaf36ddc}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Safe\+Buffer\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A boolean method that return\+UE if the queue has no values in it, and F\+A\+L\+SE if there exists value in the data structure. 
+
+
+
+Definition at line 20 of file Safe\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classSafeBuffer_ac383f154f080685aa2aef3c66771c585}\label{classSafeBuffer_ac383f154f080685aa2aef3c66771c585}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!is\+Full@{is\+Full}}
+\index{is\+Full@{is\+Full}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{is\+Full()}{isFull()}}
+{\footnotesize\ttfamily bool Safe\+Buffer\+::is\+Full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A boolean bethod that returns T\+R\+UE if the data structure is full and cannot accept anymore values, and returns F\+A\+L\+SE if there is room in the data structure for new values. 
+
+
+
+Definition at line 36 of file Safe\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classSafeBuffer_a6dec42b442f7cca40ee43fc54e8f035c}\label{classSafeBuffer_a6dec42b442f7cca40ee43fc54e8f035c}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!print\+Queue@{print\+Queue}}
+\index{print\+Queue@{print\+Queue}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{print\+Queue()}{printQueue()}}
+{\footnotesize\ttfamily void Safe\+Buffer\+::print\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This void method prints to the console all the elements from the data structure. 
+
+
+
+Definition at line 83 of file Safe\+Buffer.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{SafeBuffer_8h}{Safe\+Buffer.\+h}\item 
+\hyperlink{SafeBuffer_8cpp}{Safe\+Buffer.\+cpp}\end{DoxyCompactItemize}
